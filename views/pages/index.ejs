@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="body">
+            <h1>This is Integrify</h1>
+            <p>click on each to see more info</p>
+
+            <h2>Students:</h2>
+            <ul>
+                <% studentInfo.forEach((student, index) =>{ %>
+                    <span>
+                        <a href="/detail/<%= index%>">
+                            <li>
+                                <%= student.firstName %>
+                                    <%= student.lastName %>
+                                        <img src="/images/<%= student.src%>" />
+                            </li>
+                        </a>
+
+                        <a href="/delete/<%= index %>">delete</a>
+
+
+                    </span>
+
+                    <% }); %>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>
